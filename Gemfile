@@ -56,4 +56,4 @@ gem 'carrierwave'
 
 gem 'acts-as-taggable-on'
 
-gem 'binding.pry'
+gem 'pry-rails'

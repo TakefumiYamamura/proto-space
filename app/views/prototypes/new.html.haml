@@ -3,22 +3,27 @@
     %header.row.user-nav.row
       .col-md-12
         =f.text_field :title, placeholder: 'Title', class: 'proto-new-title'
-    = f.fields_for :images do |i|
-      .row
-        .col-md-12
-          .cover-image-upload#upload-main
-            = i.file_field :name
-        .col-md-12
-          %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              .image-upload#upload-sub1
-                = i.file_field :sub
-            %li.list-group-item.col-md-4
-              .image-upload#upload-sub2
-                = i.file_field :sub
-            %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+    .row
+      .col-md-12
+        .cover-image-upload#upload-main
+          = f.fields_for :images do |i|
+            = i.file_field :image
+            = i.hidden_field :status, value: "main"
+      .col-md-12
+        %ul.proto-sub-list.list-group
+          %li.list-group-item.col-md-4
+            .image-upload#upload-sub1
+              = f.fields_for :images do |i|
+                = i.file_field :image
+                = i.hidden_field :status, value: "sub"
+          %li.list-group-item.col-md-4
+            .image-upload#upload-sub2
+              = f.fields_for :images do |i|
+                = i.file_field :image
+                = i.hidden_field :status, value: "sub"
+          %li.list-group-item.col-md-4
+            .image-upload-plus
+              %span +
     .row.proto-description
       .col-md-12
         =f.text_field :catch_copy, placeholder: 'Catchcopy'
@@ -28,10 +33,10 @@
         %h4 Tag List
         .row
           .col-md-3
-            = text_field_tag 'prototype[tag_list][]', "", placeholder: "Web Design"
+            = text_field_tag 'prototype[tag][]', "", placeholder: "Web Design"
           .col-md-3
-            = text_field_tag 'prototype[tag_list][]', "", placeholder: "UI"
+            = text_field_tag 'prototype[tag][]', "", placeholder: "UI"
           .col-md-3
-            = text_field_tag 'prototype[tag_list][]', "", placeholder: "Category"
-    .row.text-center.proto-btn
-      =f.submit 'Publish', class: 'btn btn-lg btn-primary btn-block'
+            = text_field_tag 'prototype[tag][]', "", placeholder: "Category"
+      .row.text-center.proto-btn
+        = f.submit 'Publish', class: 'btn btn-lg btn-primary btn-block'
