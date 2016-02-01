@@ -5,7 +5,6 @@ class Prototype < ActiveRecord::Base
   belongs_to :user
 
   accepts_nested_attributes_for :images
-
   acts_as_taggable
 
   def main_image
