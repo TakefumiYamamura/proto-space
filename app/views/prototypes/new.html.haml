@@ -7,28 +7,28 @@
       .col-md-12
         .cover-image-upload#upload-main
           = f.fields_for :images do |i|
-            = i.file_field :image
+            = i.file_field :avatar
             = i.hidden_field :status, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
             .image-upload#upload-sub1
               = f.fields_for :images do |i|
-                = i.file_field :image
+                = i.file_field :avatar
                 = i.hidden_field :status, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload#upload-sub2
               = f.fields_for :images do |i|
-                = i.file_field :image
+                = i.file_field :avatar
                 = i.hidden_field :status, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload-plus
               %span +
     .row.proto-description
       .col-md-12
-        =f.text_field :catch_copy, placeholder: 'Catchcopy'
+        = f.text_field :catch_copy, placeholder: 'Catchcopy'
       .col-md-12
-        =f.text_area :concept, placeholder: 'Concept'
+        = f.text_area :concept, placeholder: 'Concept'
       .col-md-12
         %h4 Tag List
         .row
