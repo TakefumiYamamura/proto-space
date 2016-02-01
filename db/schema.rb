@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201105360) do
+ActiveRecord::Schema.define(version: 20160201111433) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "prototype_id", limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.integer  "status",       limit: 4
   end
 
   add_index "images", ["prototype_id"], name: "index_images_on_prototype_id", using: :btree
