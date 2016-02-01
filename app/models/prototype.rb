@@ -8,4 +8,12 @@ class Prototype < ActiveRecord::Base
 
   acts_as_taggable
 
+  def main_image
+    images.main.first
+  end
+
+  def sub_images
+    images.sub
+  end
+
 end
