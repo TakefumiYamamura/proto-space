@@ -53,3 +53,7 @@ gem 'erb2haml'
 gem 'bootstrap-sass'
 
 gem 'carrierwave'
+
+gem 'acts-as-taggable-on'
+
+gem 'binding.pry'

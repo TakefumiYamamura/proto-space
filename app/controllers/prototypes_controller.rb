@@ -5,6 +5,10 @@ class PrototypesController < ApplicationController
 
   def new
     @prototype = Prototype.new
+    @prototype.images.build
+  end
+
+  def create
   end
 
   def popular
