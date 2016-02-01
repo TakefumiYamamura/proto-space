@@ -57,3 +57,5 @@ gem 'carrierwave'
 gem 'acts-as-taggable-on'
 
 gem 'pry-rails'
+
+gem 'kaminari'
