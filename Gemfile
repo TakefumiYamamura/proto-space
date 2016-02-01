@@ -51,3 +51,5 @@ gem 'haml-rails'
 gem 'erb2haml'
 
 gem 'bootstrap-sass'
+
+gem 'carrierwave'
