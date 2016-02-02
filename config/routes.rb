@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'users'}
+  resources :users, only: [:show]
+
   root 'prototypes#index'
   resources :users,      only: [:show]
   resources :prototypes, only: [:new, :create, :show, :index] do
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
       get 'popular'
     end
   end
+
   resources :comments,   only: [:new, :create]
   resources :tags,       only: [:index, :show], param: :tag_name
   resources :likes,      only: [:create, :destroy]
