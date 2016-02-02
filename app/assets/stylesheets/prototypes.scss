@@ -599,7 +599,7 @@ body {
   }
 }
 
-.drop_menu_location{
+.drop_menu_location {
   position: absolute;
   top: 10px;
   left: 20px;
@@ -607,7 +607,7 @@ body {
 
 
 
-img.thumb-main{
+img.thumb-main {
     border: 1px solid #aaa;
     display: block;
     width: 730px;
@@ -616,12 +616,12 @@ img.thumb-main{
     position: relative;
     z-index: 1;
 }
-p.thumb-main img{
+p.thumb-main img {
     float: left;
     position: absolute;
 }
 
-img.thumb-sub{
+img.thumb-sub {
     border: 1px solid #aaa;
     display: block;
     width: 243.328px;
@@ -632,10 +632,17 @@ img.thumb-sub{
     left: -15px;
     z-index: 1;
 }
-p.thumb-sub img{
+
+p.thumb-sub img {
     float: left;
     position: absolute;
 
     top: -10px;
     left: -15px;
 }
+
+ul.tag-list {
+  margin: 30px;
+  display: inline-block;
+}
+
