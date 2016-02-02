@@ -1,6 +1,6 @@
 - if user_signed_in?
   - if prototype.fetch_curret_user_like(current_user.id)
-    = button_to like_path(prototype.fetch_curret_user_like(current_user)), method: :delete, remote: true, class: 'btn btn-default' do
+    = button_to like_path(id: prototype.fetch_curret_user_like(current_user), prototype_id: prototype), method: :delete, remote: true, class: 'btn btn-default' do
       = image_tag("icon_heart_red.svg")
       Like
       %span#likes_number.num
