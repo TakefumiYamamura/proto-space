@@ -61,3 +61,5 @@ gem 'pry-rails'
 gem 'kaminari'
 
 gem 'jquery-turbolinks'
+
+gem 'fog'
