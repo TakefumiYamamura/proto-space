@@ -8,6 +8,8 @@ class Prototype < ActiveRecord::Base
   accepts_nested_attributes_for :images
   acts_as_taggable
 
+  validates :title, presence: true
+
   def main_image
     images.main.first
   end
