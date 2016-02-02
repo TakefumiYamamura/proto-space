@@ -1,4 +1,6 @@
 class PrototypesController < ApplicationController
+  before_action :fetch_prototype,  only: [:show, :edit, :update]
+
   def index
     @prototypes = Prototype.order(updated_at: :desc).page(params[:page]).includes(:tags, :user)
   end
@@ -18,7 +20,6 @@ class PrototypesController < ApplicationController
   end
 
   def show
-    @prototype = Prototype.find(params[:id])
     @comment = Comment.new
   end
 
@@ -27,7 +28,13 @@ class PrototypesController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @prototype.update(create_params)
+    redirect_to root_path
+  end
+
   def edit
+    @tags = @prototype.tag_list
   end
 
   def popular
@@ -36,6 +43,10 @@ class PrototypesController < ApplicationController
   private
   def create_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, images_attributes: [:status, :avatar]).merge(tag_list: params[:prototype][:tag])
+  end
+
+  def fetch_prototype
+    @prototype = Prototype.find(params[:id])
   end
 
 end
