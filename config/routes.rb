@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'prototypes#index'
   resources :users,      only: [:show]
-  resources :prototypes, only: [:new, :create, :show, :index] do
+  resources :prototypes do
     collection do
       get 'newest'
       get 'popular'

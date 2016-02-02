@@ -22,6 +22,14 @@ class PrototypesController < ApplicationController
     @comment = Comment.new
   end
 
+  def destroy
+    Prototype.find(params[:id]).destroy
+    redirect_to root_path
+  end
+
+  def edit
+  end
+
   def popular
   end
 
