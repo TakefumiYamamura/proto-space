@@ -2,7 +2,7 @@ class PrototypesController < ApplicationController
   before_action :fetch_prototype,  only: [:show, :edit, :update]
 
   def index
-    @prototypes = Prototype.order(updated_at: :desc).page(params[:page]).includes(:tags, :user)
+    @prototypes = Prototype.order(comments_count: :desc).page(params[:page]).includes(:tags, :user)
   end
 
   def new
@@ -37,7 +37,8 @@ class PrototypesController < ApplicationController
     @tags = @prototype.tag_list
   end
 
-  def popular
+  def newest
+    @prototypes = Prototype.order(updated_at: :desc).page(params[:page]).includes(:tags, :user)
   end
 
   private
