@@ -6,19 +6,19 @@
     .row
       .col-md-12
         .cover-image-upload#upload-main
-          = f.fields_for :images do |i|
-            = i.file_field :avatar
-            = i.hidden_field :status, value: "main"
+          = f.fields_for :images, @prototype.main_image do |m|
+            = m.file_field :avatar
+            = m.hidden_field :status, value: "main"
       .col-md-12
         %ul.proto-sub-list.list-group
           %li.list-group-item.col-md-4
             .image-upload#upload-sub1
-              = f.fields_for :images do |i|
+              = f.fields_for :images, @prototype.sub_images[0] do |i|
                 = i.file_field :avatar
                 = i.hidden_field :status, value: "sub"
           %li.list-group-item.col-md-4
             .image-upload#upload-sub2
-              = f.fields_for :images do |i|
+              = f.fields_for :images, @prototype.sub_images[1] do |i|
                 = i.file_field :avatar
                 = i.hidden_field :status, value: "sub"
           %li.list-group-item.col-md-4

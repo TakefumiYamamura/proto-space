@@ -193,15 +193,15 @@ $.fn.uploadThumbs.exclusion_event = function (option) {
 
 $(function() {
     // jQuery Upload Thumbs
-    $('#prototype_images_attributes_2_avatar').uploadThumbs({
+    $('#prototype_images_attributes_0_avatar').uploadThumbs({
         position : '#upload-main',
         class_name : 'thumb-main'
     });
-    $('#prototype_images_attributes_5_avatar').uploadThumbs({
+    $('#prototype_images_attributes_1_avatar').uploadThumbs({
         position : '#upload-sub1',   // any: arbitrarily jquery selector
         class_name : 'thumb-sub'
     });
-    $('#prototype_images_attributes_8_avatar').uploadThumbs({
+    $('#prototype_images_attributes_2_avatar').uploadThumbs({
         position : '#upload-sub2',   // any: arbitrarily jquery selector
         class_name : 'thumb-sub'
     });
